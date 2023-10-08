@@ -4,6 +4,8 @@
 #include <stdio.h>
 enum WEEKDAY {SUN, MON, TUE, WED, THR, FRI, SAT};
 enum MONTH { JAN = 1, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC, NUM_MONTHS};
+const char* weekDayName[DAYS_PER_WEEK] = { "SUN", "MON","TUE", "WED", "THR", "FRI", "SAT" };
+const char* monthName[NUM_MONTHS] = { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
 bool isLeapYear(int y)
 {
@@ -23,7 +25,7 @@ int getDaysFromJan01AD01(int year, int month)
 	for (int y = 1; y < year; y++)
 	{
 		daysInYear = isLeapYear(y) ? 366 : 365;
-		days += daysInYear;
+		daysFromAD01Jan01 += daysInYear;
 	}
 
 	if (isLeapYear(year))
@@ -31,16 +33,33 @@ int getDaysFromJan01AD01(int year, int month)
 
 	for (int m = 1; m < month; m++)
 	{
-		days += daysInMonth[m];
+		daysFromAD01Jan01 += daysInMonth[m];
 	}
 	
 	return daysFromAD01Jan01;
 }
 
+void printCalendar(int year, int month)
+{
+	int weekDay;
+	int daysFromJan01AD01 = 0;
+	int daysInMonth[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	daysFromJan01AD01 = getDaysFromJan01AD01(year, month);
+	weekDay = (daysFromJan01AD01 -1 )
+}
+
 int main(void)
 {
 	int year, month = 0;
-	printf("Input year (0 to quit) and month for print_calendar() : ");
-	scanf("%d %d", &year, &month);
+	while (1)
+	{
+		printf("Input year (0 to quit) and month for print_calendar() : ");
+		scanf("%d %d", &year, &month);
 
+		if (year == 0)
+			break;
+
+
+	}
+	return 0;
 }
