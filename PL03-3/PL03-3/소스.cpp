@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #define DAYS_PER_WEEK 7
 #define MAX_NAME_LEN 15
+#define WEEKDAY_AD01Jan01 MON // the weekday of AD Jan 1.
 #include <stdio.h>
 enum WEEKDAY {SUN, MON, TUE, WED, THR, FRI, SAT};
 enum MONTH { JAN = 1, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC, NUM_MONTHS};
@@ -44,8 +45,42 @@ void printCalendar(int year, int month)
 	int weekDay;
 	int daysFromJan01AD01 = 0;
 	int daysInMonth[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-	daysFromJan01AD01 = getDaysFromJan01AD01(year, month);
-	weekDay = (daysFromJan01AD01 -1 )
+	daysFromJan01AD01 = getDaysFromJan01AD01(year, 1);
+	weekDay = (daysFromJan01AD01 - 1);
+}
+
+void printEnglishMonth(int year, int month)
+{
+	switch (month)
+	{
+	case 1:
+		printf("January"); break;
+	case 2:
+		printf("February"); break;
+	case 3:
+		printf("March"); break;
+	case 4:
+		printf("April"); break;
+	case 5:
+		printf("May"); break;
+	case 6:
+		printf("June"); break;
+	case 7:
+		printf("July"); break;
+	case 8:
+		printf("August"); break;
+	case 9:
+		printf("September"); break;
+	case 10:
+		printf("October"); break;
+	case 11:
+		printf("November"); break;
+	case 12:
+		printf("December"); break;
+	default:
+		break;
+
+	}
 }
 
 int main(void)
@@ -58,6 +93,13 @@ int main(void)
 
 		if (year == 0)
 			break;
+		printf("\n>>>>>>> ");
+		printEnglishMonth(year, month);
+		printf(" %d <<<<<<<\n", year);
+		printf("===================================");
+		printf("\n  SUN  MON  TUE  WED  THR  FRI  SAT  ");
+		printf("\n----------------------------------\n");
+
 
 
 	}
