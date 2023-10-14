@@ -52,38 +52,54 @@
 //	return 0;
 //}
 
-#include <stdio.h>
+//#include <stdio.h>
+//
+//struct vision
+//{
+//	double left;
+//	double right;
+//};
+//
+//struct vision exchange(struct vision robot);
+//
+//int main(void)
+//{
+//	struct vision robot;
+//
+//	printf("시력 입력 : ");
+//	scanf("%lf%lf", &(robot.left), &(robot.right));
+//	robot = exchange(robot);
+//	printf("바뀐 시력 : %.lf %.lf\n", robot.left, robot.right);
+//
+//	return 0;
+//}
+//
+//struct vision exchange(struct vision robot)
+//{
+//	double temp;
+//
+//	temp = robot.left;
+//	robot.left = robot.right;
+//	robot.right = temp;
+//
+//	return robot;
+//}
 
-struct vision
-{
-	double left;
-	double right;
-};
+//struct cracker {
+//	int price;
+//	int calories;
+//};
+//
+//int main()
+//{
+//	struct cracker basasak;
+//	printf("바사삭의 가격과 열량을 입력하세요 : ");
+//	scanf("%d%d", &basasak.price, &basasak.calories);
+//	printf("바사삭의 가격 : %d원\n", basasak.price);
+//	printf("바사삭의 열량 : %dkcal\n", basasak.calories);
+//	return 0;
+//}
 
-struct vision exchange(struct vision robot);
-
-int main(void)
-{
-	struct vision robot;
-
-	printf("시력 입력 : ");
-	scanf("%lf%lf", &(robot.left), &(robot.right));
-	robot = exchange(robot);
-	printf("바뀐 시력 : %.lf %.lf\n", robot.left, robot.right);
-
-	return 0;
-}
-
-struct vision exchange(struct vision robot)
-{
-	double temp;
-
-	temp = robot.left;
-	robot.left = robot.right;
-	robot.right = temp;
-
-	return robot;
-}
 
 
 
