@@ -1,2 +1,3 @@
 ﻿  소스.cpp
+C:\Users\jhklu\OneDrive\바탕 화면\c언어Homework\hongong_recursive\hongong_recursive\소스.cpp(105,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
   hongong_recursive.vcxproj -> C:\Users\jhklu\OneDrive\바탕 화면\c언어Homework\hongong_recursive\x64\Debug\hongong_recursive.exe
